@@ -1,0 +1,4 @@
+scenario,file,rows,final_df_mb,peak_rss_mb,end_rss_mb,duration_s
+A_naive_pandas,sms-call-internet-mi-2013-11-10.txt,4731582,288.79,1322.01,392.29,3.80
+B_selective_pandas,sms-call-internet-mi-2013-11-10.txt,4731582,108.30,295.28,212.16,1.75
+C_optimized_streaming,sms-call-internet-mi-2013-11-10.txt,1439875,19.57,538.30,523.90,1.20

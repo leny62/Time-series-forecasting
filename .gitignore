@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Environments
+.venv/
+.env
+env/
+venv/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Project data and outputs (rebuilt from raw)
+data/raw/
+data/interim/
+data/sample/raw/
+reports/runs/
+reports/models/
+*.parquet
+*.pkl
+*.ckpt
+*.h5
+*.weights.h5
+
+# Logs and ad-hoc
+*.log
+.scratch/
+.attic/
+tmp/
+
+milan_telco.zip
+dev-notes
+Formative1_May 2026-5.pdf
+milano-grid.geojson
+dataverse_files/

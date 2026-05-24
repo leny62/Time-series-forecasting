@@ -1,0 +1,4 @@
+model,area,label,train_seconds,val_MAE,val_RMSE,val_MAPE_percent,val_sMAPE_percent,notes,param.seq_len,param.filters,param.dilations,param.max_epochs
+cnn,5161,cnn.C0_baseline,5.481,336.5616,552.0541,22.1394,26.9724,"Baseline TCN: small filters (8), 4 dilation levels (receptive field up to 30 steps). One-day input.",144,8,"[1, 2, 4, 8]",5
+cnn,5161,cnn.C1_wider_filters,10.034,162.8948,239.8939,15.0132,16.7382,Double filters to 16. Baseline was under-parameterized; wider channels typically improve TCN expressivity.,144,16,"[1, 2, 4, 8]",5
+cnn,5161,cnn.C2_longer_receptive,19.883,203.5272,316.1335,18.9018,22.1876,Extend receptive field with one more dilation level (16 -> RF ~62 steps) and longer input (288 = two days). Wider history without bumping capacity too far.,288,12,"[1, 2, 4, 8, 16]",6

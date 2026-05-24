@@ -1,0 +1,67 @@
+# Lean configuration for resource-constrained smoke runs. Use --config configs/fast.yaml.
+
+seed: 20251201
+
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  reports_dir: reports
+  geojson: milano-grid.geojson
+
+ingest:
+  expected_first_date: 2013-11-01
+  expected_last_date: 2013-12-30
+  chunk_rows: 250000
+  workers: 1
+  area_stripe_size: 1000
+  quarantine: true
+  tz: Europe/Rome
+
+eda:
+  areas: [top, 4159, 4556]
+  rolling_window_steps: 144
+  preview_days: 14
+  acf_max_lag: 2016
+  pacf_max_lag: 60
+
+eval:
+  train_start: 2013-11-01T00:00:00
+  train_end:   2013-12-09T23:50:00
+  val_start:   2013-12-10T00:00:00
+  val_end:     2013-12-15T23:50:00
+  test_start:  2013-12-16T00:00:00
+  test_end:    2013-12-22T23:50:00
+  mape_epsilon: 1.0e-3
+  metric_decimals: 4
+
+models:
+  sarima:
+    order: [2, 0, 2]
+    seasonal_order: [0, 0, 0, 0]
+    daily_terms: 4
+    weekly_terms: 3
+    use_log1p_if_helpful: true
+    optimizer: lbfgs
+  lstm:
+    seq_len: 144
+    hidden: 32
+    num_layers: 1
+    dropout: 0.05
+    batch_size: 128
+    max_epochs: 10
+    patience: 4
+    lr: 1.0e-3
+    weight_decay: 1.0e-4
+    grad_clip: 1.0
+    huber_delta: 1.0
+  cnn:
+    seq_len: 288
+    filters: 12
+    kernel_size: 3
+    dilations: [1, 2, 4, 8, 16]
+    dropout: 0.05
+    batch_size: 256
+    max_epochs: 6
+    patience: 3
+    lr: 1.0e-3
+    huber_delta: 1.0

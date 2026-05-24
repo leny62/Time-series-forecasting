@@ -1,0 +1,14 @@
+{
+  "os": "Linux",
+  "os_release": "6.8.0-106-generic",
+  "machine": "aarch64",
+  "processor": "aarch64",
+  "python": "3.10.12",
+  "cpu_logical": 4,
+  "cpu_physical": 4,
+  "ram_gb": 3.81,
+  "torch_version": null,
+  "tf_version": null,
+  "has_cuda": false,
+  "has_mps": false
+}

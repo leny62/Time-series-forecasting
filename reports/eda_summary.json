@@ -1,0 +1,126 @@
+{
+  "areas": {
+    "4556": 4556,
+    "top(5161)": 5161,
+    "4159": 4159,
+    "5161": 5161
+  },
+  "per_area": {
+    "4556": {
+      "square_id": 4556,
+      "n_obs": 8928,
+      "stationarity": {
+        "adf_stat": -16.085087666180826,
+        "adf_p": 1.11597964222196e-22,
+        "kpss_stat": 0.5222346041630306,
+        "kpss_p": 0.01
+      },
+      "adf_after_diff": {
+        "adf_stat_diff": -18.87548944581644,
+        "adf_p_diff": 0.0
+      },
+      "adf_after_seasonal_diff": {
+        "adf_stat_diff": -13.316711661615473,
+        "adf_p_diff": 5.578104013760305e-21
+      },
+      "strengths_daily": {
+        "seasonal_strength": 0.7872874433719343,
+        "trend_strength": 0.61096793732337
+      },
+      "strengths_weekly": {
+        "seasonal_strength": 0.8673477322218865,
+        "trend_strength": 0.6711014522869501
+      },
+      "correlation": {
+        "acf_lag_144": 0.8079357974636506,
+        "acf_lag_1008": 0.7369386336273591
+      },
+      "outliers_count": 106,
+      "drop_runs_count": 3
+    },
+    "5161": {
+      "square_id": 5161,
+      "n_obs": 8928,
+      "stationarity": {
+        "adf_stat": -19.201700315284608,
+        "adf_p": 0.0,
+        "kpss_stat": 0.1286950257482285,
+        "kpss_p": 0.08204624861439166
+      },
+      "adf_after_diff": {
+        "adf_stat_diff": -15.160186018589938,
+        "adf_p_diff": 1.8429480512276427e-22
+      },
+      "adf_after_seasonal_diff": {
+        "adf_stat_diff": -11.84714407476094,
+        "adf_p_diff": 6.8409815802430405e-19
+      },
+      "strengths_daily": {
+        "seasonal_strength": 0.8580460902280622,
+        "trend_strength": 0.23639907045075104
+      },
+      "strengths_weekly": {
+        "seasonal_strength": 0.9032344172250913,
+        "trend_strength": 0.17900522812078956
+      },
+      "correlation": {
+        "acf_lag_144": 0.8783003248006304,
+        "acf_lag_1008": 0.8376899157103355
+      },
+      "outliers_count": 124,
+      "drop_runs_count": 4
+    },
+    "4159": {
+      "square_id": 4159,
+      "n_obs": 8928,
+      "stationarity": {
+        "adf_stat": -14.102422534036203,
+        "adf_p": 8.91430761492519e-22,
+        "kpss_stat": 0.6414911459114024,
+        "kpss_p": 0.01
+      },
+      "adf_after_diff": {
+        "adf_stat_diff": -14.600051245089205,
+        "adf_p_diff": 3.7256235538815767e-22
+      },
+      "adf_after_seasonal_diff": {
+        "adf_stat_diff": -10.691067122961801,
+        "adf_p_diff": 8.8364483309551e-17
+      },
+      "strengths_daily": {
+        "seasonal_strength": 0.6669166911108768,
+        "trend_strength": 0.5573984921140661
+      },
+      "strengths_weekly": {
+        "seasonal_strength": 0.8824852398205377,
+        "trend_strength": 0.6718699323574238
+      },
+      "correlation": {
+        "acf_lag_144": 0.7770282886011993,
+        "acf_lag_1008": 0.76610066608337
+      },
+      "outliers_count": 105,
+      "drop_runs_count": 5
+    }
+  },
+  "city_pdf": {
+    "n_areas": 10000,
+    "n_positive": 10000,
+    "mean": 555289.4187321468,
+    "median": 277871.1007051468,
+    "std": 892551.1012516249,
+    "min": 213.62653277278878,
+    "max": 12740060.34602356,
+    "skew": 4.265382269084669,
+    "kurtosis": 25.51555983362954,
+    "p1": 18634.78125551343,
+    "p5": 35031.312784180045,
+    "p95": 2171807.123688125,
+    "p99": 4698732.270431329
+  },
+  "spatial": {
+    "top_area": 5161,
+    "top_value": 12740060.34602356,
+    "n_nonzero": 10000
+  }
+}

@@ -1,0 +1,5 @@
+model,area,label,train_seconds,val_MAE,val_RMSE,val_MAPE_percent,val_sMAPE_percent,notes,param.seq_len,param.hidden,param.num_layers,param.max_epochs
+lstm,5161,lstm.L0_baseline,6.254,115.9178,165.2637,11.9251,11.3658,"Baseline: half-day context (72 steps), 1 layer, 32 hidden. Cheapest sensible LSTM.",72,32,1,8
+lstm,5161,lstm.L1_full_day,10.811,116.593,167.3669,11.6466,11.4585,Extend context to one full day (144 steps) to give the model a complete daily cycle as input.,144,32,1,8
+lstm,5161,lstm.L2_deeper,18.775,142.0577,200.8329,14.3264,13.6647,"Increase capacity: 2 layers, 48 hidden, fewer epochs. Tests whether the prior gap to SARIMA is capacity-limited.",144,48,2,5
+lstm,5161,lstm.L3_longer_history,21.796,115.7807,167.6031,11.2704,11.2151,Doubled history (288 = two days). Tests whether the LSTM benefits from seeing the previous-day pattern explicitly.,288,32,1,8

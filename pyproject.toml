@@ -1,0 +1,81 @@
+[project]
+name = "mtraffic"
+version = "0.1.0"
+description = "Time series analysis and forecasting of Milan mobile network traffic."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+authors = [{ name = "Leny" }]
+license = { text = "MIT" }
+
+dependencies = [
+    "numpy>=1.26,<2.1",
+    "pandas>=2.2,<3",
+    "pyarrow>=16,<18",
+    "statsmodels>=0.14",
+    "scikit-learn>=1.4,<2",
+    "matplotlib>=3.8",
+    "psutil>=5.9",
+    "typer>=0.12",
+    "pyyaml>=6",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.3,<3"]
+tf = ["tensorflow>=2.16,<3", "keras>=3.3,<4"]
+spatial = ["geopandas>=0.14", "libpysal>=4.10", "esda>=2.5"]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+    "hypothesis>=6.100",
+    "ruff>=0.5",
+    "black>=24.4",
+    "mypy>=1.10",
+    "nbstripout>=0.7",
+    "pre-commit>=3.7",
+    "ipykernel>=6.29",
+    "jupyter>=1",
+]
+
+[project.scripts]
+mtraffic = "mtraffic.cli:app"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mtraffic"]
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "N", "C4"]
+ignore = ["E203", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/mtraffic"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "perf: performance tests, opt in via -m perf",
+    "slow: slow tests, opt in via -m slow",
+]
